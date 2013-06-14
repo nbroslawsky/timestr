@@ -6,6 +6,8 @@ var INTERVALS = [
 	{ match: /^(\d+)\s*(s)(?:ec(?:ond)?s?)?\s*$/i, ms: 1000 }
 ];
 
+function bad() { return false; }
+
 module.exports = function(str) {
 
 	var i = 0, m;
@@ -17,8 +19,21 @@ module.exports = function(str) {
 
 	if(!m) m = str.match(/^(\d+)\s*(?:m(?:illisecond)?s)?\s*$/);
 
+	if(!m) {
+		return {
+			time : false,
+			units : false,
+			toMilliseconds : bad,
+			toSeconds : bad,
+			toMinutes : bad,
+			toHours : bad,
+			toDays : bad,
+			toWeeks : bad
+		};
+	}
+
 	var ms = parseInt(m[1], 10) * (INTERVALS[i] && INTERVALS[i].ms || 1);
-	return m && {
+	return {
 		time: parseInt(m[1], 10),
 		units: (m[2] || 'ms').toLowerCase(),
 
@@ -29,4 +44,5 @@ module.exports = function(str) {
 		toDays : function() { return ms / INTERVALS[1].ms; },
 		toWeeks : function() { return ms / INTERVALS[0].ms; }
 	};
+
 };

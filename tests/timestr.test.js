@@ -31,4 +31,6 @@ describe('converting strings', function() {
 	it('should convert to days properly', function() { assert.equal(timestr(fifteenDaysLong).toDays(),15); });
 	it('should convert to weeks properly', function() { assert.equal(timestr(fourteenDaysLong).toWeeks(),2); });
 
+	it('should return false on bad inputs', function() { assert.equal(timestr('whatup').toSeconds(),false); });
+
 });
