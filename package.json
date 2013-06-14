@@ -1,6 +1,6 @@
 {
   "name": "timestr",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "timestr",
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec $(find . -name node_modules -prune -o \\( -type f -name *.test.js -print \\))"
@@ -22,7 +22,7 @@
       "iphone/6",
       "ipad/6"
     ],
-    "harness" : "mocha-tdd",
+    "harness": "mocha-tdd",
     "files": "tests/*.test.js"
   }
 }
