@@ -17,32 +17,19 @@ module.exports = function(str) {
 		if(m = str.match(INTERVALS[i].match)) break;
 	}
 
-	if(!m) m = str.match(/^(\d+)\s*(?:m(?:illisecond)?s)?\s*$/);
+	if(!m) m = str.match(/^(\d+)\s*(?:m(?:illisecond)?s)?\s*$/) || false;
 
-	if(!m) {
-		return {
-			time : false,
-			units : false,
-			toMilliseconds : bad,
-			toSeconds : bad,
-			toMinutes : bad,
-			toHours : bad,
-			toDays : bad,
-			toWeeks : bad
-		};
-	}
-
-	var ms = parseInt(m[1], 10) * (INTERVALS[i] && INTERVALS[i].ms || 1);
+	var ms = m && parseInt(m[1], 10) * (INTERVALS[i] && INTERVALS[i].ms || 1) || false;
 	return {
-		time: parseInt(m[1], 10),
-		units: (m[2] || 'ms').toLowerCase(),
+		time: m && parseInt(m[1], 10) || false,
+		units: m && (m[2] || 'ms').toLowerCase() || false,
 
-		toMilliseconds : function() { return ms; },
-		toSeconds : function() { return ms / INTERVALS[4].ms; },
-		toMinutes : function() { return ms / INTERVALS[3].ms; },
-		toHours : function() { return ms / INTERVALS[2].ms; },
-		toDays : function() { return ms / INTERVALS[1].ms; },
-		toWeeks : function() { return ms / INTERVALS[0].ms; }
+		toMilliseconds : function() { return (ms === false) ? false : ms; },
+		toSeconds : function() { return (ms === false) ? false : (ms / INTERVALS[4].ms); },
+		toMinutes : function() { return (ms === false) ? false : (ms / INTERVALS[3].ms); },
+		toHours : function() { return (ms === false) ? false : (ms / INTERVALS[2].ms); },
+		toDays : function() { return (ms === false) ? false : (ms / INTERVALS[1].ms); },
+		toWeeks : function() { return (ms === false) ? false : (ms / INTERVALS[0].ms); }
 	};
 
 };
