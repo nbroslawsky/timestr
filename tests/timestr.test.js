@@ -34,3 +34,41 @@ describe('converting strings', function() {
 	it('should return false on bad inputs', function() { assert.equal(timestr('whatup').toSeconds(),false); });
 
 });
+
+describe('milliseconds', function() {
+
+	it('should convert 1 millisecond', function() {
+		assert.equal(timestr('1 ms').toMilliseconds(), 1);
+		assert.equal(timestr('1ms').toMilliseconds(), 1);
+		assert.equal(timestr('1 millisecond').toMilliseconds(), 1);
+		assert.equal(timestr('1 milliseconds').toMilliseconds(), 1);
+	});
+
+	it('should convert 1337 millisecond', function() {
+		assert.equal(timestr('1337 ms').toMilliseconds(), 1337);
+		assert.equal(timestr('23ms').toMilliseconds(), 1337);
+		assert.equal(timestr('1337 millisecond').toMilliseconds(), 1337);
+		assert.equal(timestr('1337 milliseconds').toMilliseconds(), 1337);
+	});
+
+});
+
+
+describe('seconds', function() {
+
+	it('should convert 1 second', function() {
+		assert.equal(timestr('1 s').toSeconds(), 1);
+		assert.equal(timestr('1s').toSeconds(), 1);
+		assert.equal(timestr('1 second').toSeconds(), 1);
+		assert.equal(timestr('1 seconds').toSeconds(), 1);
+	});
+
+		it('should convert 1337 second', function() {
+		assert.equal(timestr('1337 s').toSeconds(), 1337);
+		assert.equal(timestr('1337s').toSeconds(), 1337);
+		assert.equal(timestr('1337 second').toSeconds(), 1337);
+		assert.equal(timestr('1337 seconds').toSeconds(), 1337);
+	});
+
+});
+
