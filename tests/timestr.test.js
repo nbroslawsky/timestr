@@ -46,7 +46,7 @@ describe('milliseconds', function() {
 
 	it('should convert 1337 millisecond', function() {
 		assert.equal(timestr('1337 ms').toMilliseconds(), 1337);
-		assert.equal(timestr('23ms').toMilliseconds(), 1337);
+		assert.equal(timestr('1337ms').toMilliseconds(), 1337);
 		assert.equal(timestr('1337 millisecond').toMilliseconds(), 1337);
 		assert.equal(timestr('1337 milliseconds').toMilliseconds(), 1337);
 	});
