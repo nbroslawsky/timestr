@@ -17,7 +17,7 @@ module.exports = function(str) {
 		if(m = str.match(INTERVALS[i].match)) break;
 	}
 
-	if(!m) m = str.match(/^(\d+)\s*(?:m(?:illisecond)?s)?\s*$/) || false;
+	if(!m) m = str.match(/^(\d+)\s*(?:ms|milliseconds?)?\s*$/i) || false;
 
 	var ms = m && parseInt(m[1], 10) * (INTERVALS[i] && INTERVALS[i].ms || 1) || false;
 	return {
