@@ -6,8 +6,6 @@ var INTERVALS = [
 	{ match: /^(\d+)\s*(s)(?:ec(?:ond)?s?)?\s*$/i, ms: 1000 }
 ];
 
-function bad() { return false; }
-
 module.exports = function(str) {
 
 	var i = 0, m;
