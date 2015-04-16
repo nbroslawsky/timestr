@@ -12,7 +12,7 @@ module.exports = function(str) {
 	var i = 0, m;
 	str = str.toString();
 
-	for(; i < INTERVALS.length; i++) {
+	for(i = INTERVALS.length; i--;) {
 		if(m = str.match(INTERVALS[i].match) || false) break;
 	}
 
