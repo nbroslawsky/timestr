@@ -41,6 +41,20 @@ describe('days', function() {
 
 });
 
+describe('numbers', function() {
+	it('should be treated as milliseconds', function() {
+		assert.equal(timestr(1).toMilliseconds(), 1);
+		assert.equal(timestr(1337).toMilliseconds(), 1337);
+	});
+});
+
+describe('numeric strings (no units)', function() {
+	it('should be treated as milliseconds', function() {
+		assert.equal(timestr('1').toMilliseconds(), 1);
+		assert.equal(timestr('1337').toMilliseconds(), 1337);
+	});
+});
+
 describe('milliseconds strings', function() {
 
 	it('should convert 1 millisecond', function() {
