@@ -1,6 +1,6 @@
 {
   "name": "timestr",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A simple module for interpreting time duration strings",
   "keywords": [
     "time",
@@ -37,17 +37,5 @@
     "harness": "mocha-tdd",
     "files": "tests/*.test.js"
   },
-  "testling": {
-    "browsers": [
-      "ie/9..latest",
-      "firefox/19..latest",
-      "chrome/25..latest",
-      "safari/latest",
-      "iphone/6",
-      "ipad/6"
-    ],
-    "harness" : "mocha-tdd",
-    "files": "tests/*.test.js"
-  },
-  "license":"MIT"
+  "license": "MIT"
 }
