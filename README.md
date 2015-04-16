@@ -1,7 +1,7 @@
 timestr
 =======
 
-A simple module for interpreting time duration strings
+A simple module for interpreting time duration strings.
 
 
 [![Build Status](https://secure.travis-ci.org/nbroslawsky/timestr.png?branch=master)](http://travis-ci.org/nbroslawsky/timestr)
