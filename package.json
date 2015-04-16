@@ -1,7 +1,19 @@
 {
   "name": "timestr",
   "version": "0.1.0",
-  "description": "timestr",
+  "description": "A simple module for interpreting time duration strings",
+  "keywords": [
+    "time",
+    "duration",
+    "time strings",
+    "configuration",
+    "milliseconds"
+  ],
+  "contributors": [
+    "Nathan Broslawsky (http://github.com/nbroslawsky)",
+    "Brad Harris <bmharris@gmail.com>",
+    "Matt Dunlap <mpdunlap@gmail.com>"
+  ],
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec $(find . -name node_modules -prune -o \\( -type f -name *.test.js -print \\))"
   },

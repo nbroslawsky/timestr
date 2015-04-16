@@ -1,7 +1,7 @@
 timestr
 =======
 
-A simple module for interpreting time duration strings
+A simple module for interpreting time duration strings.
 
 
 [![Build Status](https://secure.travis-ci.org/nbroslawsky/timestr.png?branch=master)](http://travis-ci.org/nbroslawsky/timestr)
@@ -36,6 +36,10 @@ You can create a timestr object from most common formats:
 ```javascript
 var timestr = require('timestr');
 
+// without units, values are treated as ms
+timestr(1000);
+timestr('1000');
+
 // milliseconds
 timestr('1ms');
 timestr('1 millisecond');
@@ -44,18 +48,21 @@ timestr('2 milliseconds');
 // seconds
 timestr('1s');
 timestr('1 sec');
+timestr('1 secs');
 timestr('1 second');
 timestr('2 seconds');
 
 // minutes
 timestr('1m');
 timestr('1 min');
+timestr('1 mins');
 timestr('1 minute');
 timestr('2 minutes');
 
 // hours
 timestr('1h');
 timestr('1 hr');
+timestr('1 hrs');
 timestr('1 hour');
 timestr('2 hours');
 
@@ -67,6 +74,7 @@ timestr('2 days');
 // weeks
 timestr('1w');
 timestr('1 wk');
+timestr('1 wks');
 timestr('1 week');
 timestr('2 weeks');
 ```
