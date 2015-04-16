@@ -22,9 +22,9 @@ describe('numeric strings (no units)', function() {
 describe('days', function() {
 	var fifteenDaysShort = '15d',
 		fourteenDaysShort = '14d',
-		fifteenDaysMedium = '15 day',
+		fifteenDaysMedium = '15 day ',
 		fourteenDaysMedium = '14 day',
-		fifteenDaysLong = '15 days',
+		fifteenDaysLong = ' 15 days',
 		fourteenDaysLong = '14 days';
 
 	describe('short string', function() {
@@ -62,15 +62,15 @@ describe('milliseconds strings', function() {
 	it('should convert 1 millisecond', function() {
 		assert.equal(timestr('1 ms').toMilliseconds(), 1);
 		assert.equal(timestr('1ms').toMilliseconds(), 1);
-		assert.equal(timestr('1 millisecond').toMilliseconds(), 1);
-		assert.equal(timestr('1 milliseconds').toMilliseconds(), 1);
+		assert.equal(timestr('1 millisecond ').toMilliseconds(), 1);
+		assert.equal(timestr(' 1 milliseconds').toMilliseconds(), 1);
 	});
 
 	it('should convert 1337 milliseconds', function() {
 		assert.equal(timestr('1337 ms').toMilliseconds(), 1337);
 		assert.equal(timestr('1337ms').toMilliseconds(), 1337);
-		assert.equal(timestr('1337 millisecond').toMilliseconds(), 1337);
-		assert.equal(timestr('1337 milliseconds').toMilliseconds(), 1337);
+		assert.equal(timestr('1337 millisecond ').toMilliseconds(), 1337);
+		assert.equal(timestr(' 1337 milliseconds').toMilliseconds(), 1337);
 	});
 });
 
@@ -81,8 +81,8 @@ describe('seconds strings', function() {
 		assert.equal(timestr('1s').toMilliseconds(), 1000);
 		assert.equal(timestr('1 sec').toMilliseconds(), 1000);
 		assert.equal(timestr('1 secs').toMilliseconds(), 1000);
-		assert.equal(timestr('1 second').toMilliseconds(), 1000);
-		assert.equal(timestr('1 seconds').toMilliseconds(), 1000);
+		assert.equal(timestr('1 second ').toMilliseconds(), 1000);
+		assert.equal(timestr(' 1 seconds').toMilliseconds(), 1000);
 	});
 
 	it('should convert 1337 seconds', function() {
@@ -90,8 +90,8 @@ describe('seconds strings', function() {
 		assert.equal(timestr('1337s').toSeconds(), 1337);
 		assert.equal(timestr('1337 sec').toSeconds(), 1337);
 		assert.equal(timestr('1337 secs').toSeconds(), 1337);
-		assert.equal(timestr('1337 second').toSeconds(), 1337);
-		assert.equal(timestr('1337 seconds').toSeconds(), 1337);
+		assert.equal(timestr('1337 second ').toSeconds(), 1337);
+		assert.equal(timestr(' 1337 seconds').toSeconds(), 1337);
 	});
 });
 
@@ -102,8 +102,8 @@ describe('minutes strings', function() {
 		assert.equal(timestr('1m').toSeconds(), 60);
 		assert.equal(timestr('1 min').toSeconds(), 60);
 		assert.equal(timestr('1 mins').toSeconds(), 60);
-		assert.equal(timestr('1 minute').toSeconds(), 60);
-		assert.equal(timestr('1 minutes').toSeconds(), 60);
+		assert.equal(timestr('1 minute ').toSeconds(), 60);
+		assert.equal(timestr(' 1 minutes').toSeconds(), 60);
 	});
 
 	it('should convert 1337 minutes', function() {
@@ -111,8 +111,8 @@ describe('minutes strings', function() {
 		assert.equal(timestr('1337m').toMinutes(), 1337);
 		assert.equal(timestr('1337 min').toMinutes(), 1337);
 		assert.equal(timestr('1337 mins').toMinutes(), 1337);
-		assert.equal(timestr('1337 minute').toMinutes(), 1337);
-		assert.equal(timestr('1337 minutes').toMinutes(), 1337);
+		assert.equal(timestr('1337 minute ').toMinutes(), 1337);
+		assert.equal(timestr(' 1337 minutes').toMinutes(), 1337);
 	});
 });
 
@@ -123,8 +123,8 @@ describe('hours strings', function() {
 		assert.equal(timestr('1h').toMinutes(), 60);
 		assert.equal(timestr('1 hr').toMinutes(), 60);
 		assert.equal(timestr('1 hrs').toMinutes(), 60);
-		assert.equal(timestr('1 hour').toMinutes(), 60);
-		assert.equal(timestr('1 hours').toMinutes(), 60);
+		assert.equal(timestr('1 hour ').toMinutes(), 60);
+		assert.equal(timestr(' 1 hours').toMinutes(), 60);
 	});
 
 	it('should convert 1337 hours', function() {
@@ -132,8 +132,8 @@ describe('hours strings', function() {
 		assert.equal(timestr('1337h').toHours(), 1337);
 		assert.equal(timestr('1337 hr').toHours(), 1337);
 		assert.equal(timestr('1337 hrs').toHours(), 1337);
-		assert.equal(timestr('1337 hour').toHours(), 1337);
-		assert.equal(timestr('1337 hours').toHours(), 1337);
+		assert.equal(timestr('1337 hour ').toHours(), 1337);
+		assert.equal(timestr(' 1337 hours').toHours(), 1337);
 	});
 });
 
@@ -144,8 +144,8 @@ describe('weeks strings', function() {
 		assert.equal(timestr('1w').toDays(), 7);
 		assert.equal(timestr('1 wk').toDays(), 7);
 		assert.equal(timestr('1 wks').toDays(), 7);
-		assert.equal(timestr('1 week').toDays(), 7);
-		assert.equal(timestr('1 weeks').toDays(), 7);
+		assert.equal(timestr('1 week ').toDays(), 7);
+		assert.equal(timestr(' 1 weeks').toDays(), 7);
 	});
 
 	it('should convert 1337 weeks', function() {
@@ -153,7 +153,7 @@ describe('weeks strings', function() {
 		assert.equal(timestr('1337w').toWeeks(), 1337);
 		assert.equal(timestr('1337 wk').toWeeks(), 1337);
 		assert.equal(timestr('1337 wks').toWeeks(), 1337);
-		assert.equal(timestr('1337 week').toWeeks(), 1337);
-		assert.equal(timestr('1337 weeks').toWeeks(), 1337);
+		assert.equal(timestr('1337 week ').toWeeks(), 1337);
+		assert.equal(timestr(' 1337 weeks').toWeeks(), 1337);
 	});
 });
